@@ -178,43 +178,108 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">02</span>/src/ 檔案夾。
+      Simple baseline 程式碼，請放在 https://github.com/
+      <span style="color:red;">catossun</span>
+      /vis2023f/hw
+      <span style="color:red;">02</span>
+      /src/simple 檔案夾。
+      <br>
+      
+      <hr>
+      Medium baseline 程式碼，請放在 https://github.com/
+      <span style="color:red;">catossun</span>
+      /vis2023f/hw
+      <span style="color:red;">02</span>
+      /src/medium 檔案夾。
+      <br>
+      
+      <hr>
+      Strong baseline 程式碼，請放在 https://github.com/
+      <span style="color:red;">catossun</span>
+      /vis2023f/hw
+      <span style="color:red;">02</span>
+      /src/strong 檔案夾。
+      <br>
+      
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <h4>前往你的 Demo 網頁</h4>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      <a href="https://catossun.github.io/vis2023f/hw02/src/simple/">https://catossun.github.io/vis2023f/hw02/src/simple/</a>
+      <hr>
+      <a href="https://catossun.github.io/vis2023f/hw02/src/medium/">https://catossun.github.io/vis2023f/hw02/src/medium/</a>   
+      <hr>
+      <a href="https://catossun.github.io/vis2023f/hw02/src/medium/">https://catossun.github.io/vis2023f/hw02/src/strong/</a>
+      </div>
+  </div>
+
+  
+  <!-- ------------------------------------------------>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      透過這次的作業，我學習到了要如何使用 Observable 這個網頁來呈現資料。透過撰寫簡單的 JavaScript 來針對資料進行前處理，之後透過 Observable 裡面所提供的 Plot 工具，就能夠繪製出許多種類的表格。並透過顏色來表示出不同的資料。讓我們在資料分析的過程中能夠透過視覺化的方式來呈現資料，便能夠一目瞭然資料的分佈。
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <table>
+       <table>
         <tr>
           <th>總分</th>
           <th>完成後打勾</th>
           <th>配分</th>
           <th>分項描述</th>
         </tr>
+
         <tr>
-          <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td rowspan="16" id="myTotal"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked="checked"></td>
           <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td>Simple baseline-1 - 以histogram呈現每個年份出生的人數</td>
         </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+
+         <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked="checked"></td>
+          <td id='m2'>2</td>
+          <td>Simple baseline-2 - 可調整margin, fill color, tip</td>
         </tr>
+        
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked="checked"></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td>Medium baseline-1 - 以bar chart呈現每個年份出生的人數</td>
         </tr>
+
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked="checked"></td>
+          <td id='m4'>2</td>
+          <td>Medium baseline-2 - 可調整margin, fill color, tip </td>
+        </tr>
+        
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox5"></td>
+          <td id='m5'>1</td>
+          <td>Strong baseline-1 - 以bar chart呈現每個星座的人數 </td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox6"></td>
+          <td id='m6'>1</td>
+          <td>Strong baseline-2 - 以histogram呈現每個星座的人數 </td>
+        </tr>
+
       </table>
     </div>
   </div>
@@ -222,13 +287,47 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+       <h4>Simple baseline - 以 histogram 呈現每個年份出生的人數，可調整margin, fill color, tip</h4>
+    </div>
+  </div>
+  
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
+  src="https://observablehq.com/embed/77541289bd248932?cell=*"></iframe>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+       <h4>Medium baseline - 以 bar chart 呈現每個年份出生的人數，可調整margin, fill color, tip</h4>
+    </div>
+  </div>
+  
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
+  src="https://observablehq.com/embed/f49b8b1dcede0d16?cell=*"></iframe>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+       <h4>Strong baseline - 分別以 bar chart 和 histogram 呈現每個星座的人數</h4>
+    </div>
+  </div>
+  
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
+  src=“…."></iframe>  
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+
 
   <!-- ------------------------------------------------>
 
@@ -267,8 +366,21 @@
       score += parseInt(d3.select('#m3').html());   
     }
 
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());
+    }
+
+    if (d3.select("#myCheckbox5").property("checked")){
+      score += parseInt(d3.select('#m5').html());   
+    }
+
+    if (d3.select("#myCheckbox6").property("checked")){
+      score += parseInt(d3.select('#m6').html());   
+    }
+
     d3.select("#myTotal").html(score);    
   }
+
 </script>
 
 </body>
