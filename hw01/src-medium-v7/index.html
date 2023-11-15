@@ -1,8 +1,3 @@
-<!--
-http://bl.ocks.org/ndarville/7075823
-https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
--->
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -11,18 +6,11 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
     <meta charset="utf-8">
     <script src="./d3.v7.min.js"></script>
     <style>
-        /* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap'); */
-
-        @font-face {
-            font-family:'CircleFont'; /* src: url(https://circle472.github.io/ct2022s/hw04/CircleFont.ttf);  https://github.com/circle472/ct2022s/ */
-            src: url(CircleFont_v2.woff2); /* https://cloudconvert.com/ttf-to-woff2 */
-        }
-
         h3 {
             background-color: rgba(255, 255, 0, 0.1);
             color: white; 
             text-shadow: 0 0 6px #FF0000, 0 0 6px #000000;
-            font-family: 'CircleFont', 'Noto Serif JP', serif;
+            font-family: 'Noto Serif JP', serif;
             font-size: 18pt;
             border: solid 1px black;
             width: 90%;
@@ -33,7 +21,7 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
 
         div {
             background-color: rgba(255, 255, 0, 0.1);
-            font-family: 'CircleFont', 'Noto Serif JP', serif;
+            font-family: 'Noto Serif JP', serif;
             font-size: 16pt;
             border: solid 1px black;
             width: 90%;
@@ -44,13 +32,13 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
 
         body {
             background-color: rgba(255, 128, 255, 0.1);
-            font-family: 'CircleFont', 'Noto Serif JP', serif;
+            font-family: 'Noto Serif JP', serif;
         }
 
         table {
             border-collapse: collapse;
             border: 2px black solid;
-            font-family: 'CircleFont', 'Noto Serif JP', serif;
+            font-family: 'Noto Serif JP', serif;
             font-size: 16pt;
             /* font: 16px sans-serif; */
             margin-left: auto;
@@ -83,24 +71,6 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
         img:hover {
             box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
         }
-
-        /*
-        .excellent-kid {
-            background-color: skyblue;
-        }
-
-        .good-kid {
-            background-color: pink;
-        }
-
-        .fair-kid {
-            background-color: pink;
-        }
-
-        .poor-kid {
-            background-color: pink;
-        }
-        */
 
         td:hover img {
             transition: width, height;
@@ -159,6 +129,19 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
     <div id="div2"></div>
 
     <script type="text/javascript" charset="utf-8">
+        let scoreImg = [
+            "../score/10.svg",
+            "../score/0.svg",
+            "../score/1.svg",
+            "../score/2.svg",
+            "../score/3.svg",
+            "../score/4.svg",
+            "../score/5.svg",
+            "../score/6.svg",
+            "../score/7.svg",
+            "../score/8.svg",
+            "../score/9.svg"
+        ];
 
         d3.select("#div1")
             .append("table")
@@ -180,85 +163,55 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
                 else return "poor-kid";})
             .append("img")
             .attr("src", function (d, i) { 
-                if (d == 10) return "./svg10/52.svg";
-                else if (d == 9) return "./svg10/51.svg";
-                else if (d == 8) return "./svg10/42.svg";
-                else if (d == 7) return "./svg10/41.svg";
-                else if (d == 6) return "./svg10/32.svg";
-                else if (d == 5) return "./svg10/31.svg";
-                else if (d == 4) return "./svg10/22.svg";
-                else if (d == 3) return "./svg10/21.svg";
-                else if (d == 2) return "./svg10/12.svg";
-                else if (d == 1) return "./svg10/11.svg";
-                else if (d == 0) return "./svg10/01.svg";
-                else return "./svg10/00.svg"; })
+                if (10 >= d >= 0) return scoreImg[d];
+                else return "./svg10/00.svg"
+            })
             .attr("x", "0")
             .attr("y", "0")
             .attr("width",  function(d, i) { return (i + 1) * 60; })
             .attr("height", function(d, i) { return (i + 1) * 60; });
 
 
-    d3.text("./data.csv", function (data) {
+        d3.text("./csv/data.csv").then(function (data) {
 
-        //var parsedCSV = d3.csv.parseRows(data);
-        parsedCSV = d3.csv.parseRows(data);
-        //console.log(parsedCSV);
+            //var parsedCSV = d3.csv.parseRows(data);
+            parsedCSV = d3.csvParseRows(data);
+            //console.log(parsedCSV);
 
-        var container = d3.select("#div2")
-            .append("table")
-            .selectAll("tr")
-            .data(parsedCSV)
-            .enter()
-            .append("tr")
-            .selectAll("td")
-            .data(function (d) { return d; }).enter()
-            .append("td")
-            .html(function (d, i) {
-                if ( i == 4 && d != 'GitHub 帳號' ) {
-                    return '<a href="https://' + d + '.github.io/vis2023f/" target="_blank"><img src="https://' + d + '.github.io/vis2023f/hw00/me.jpg"></a>' + '<hr><a href="https://github.com/' + d + '/vis2023f/" target="_blank">' + d + '</a>';
-                }
-                else if ( i == 0 || i == 2 || isNaN(d)) {
-                    return d;
-                }
-            })
-            .filter(function (d, i) { return (i > 2 && !isNaN(d) && d != ""); })
-            .attr("class", function (d, i) { 
-                if (d == 10) return "excellent-kid"; 
-                else if (d >= 7 ) return "good-kid"; 
-                else if (d >= 2 ) return "fair-kid"; 
-                else return "poor-kid";})
-            .append("img")
-            .attr("src", function (d, i) {
-                if (d == 10) 
-                    return "./svg10/52.svg";
-                else if (d == 9) 
-                    return "./svg10/51.svg";
-                else if (d == 8) 
-                    return "./svg10/42.svg";
-                else if (d == 7) 
-                    return "./svg10/41.svg";
-                else if (d == 6) 
-                    return "./svg10/32.svg";
-                else if (d == 5) 
-                    return "./svg10/31.svg";
-                else if (d == 4) 
-                    return "./svg10/22.svg";
-                else if (d == 3) 
-                    return "./svg10/21.svg";
-                else if (d == 2) 
-                    return "./svg10/12.svg";
-                else if (d == 1) 
-                    return "./svg10/11.svg";
-                else if (d == 0) 
-                    return "./svg10/01.svg";
-                else 
-                    return "./svg10/00.svg";
-            })
-            .attr("width", 50)
-            .attr("height", 50)
-            ;
-    });
+            var container = d3.select("#div2")
+                .append("table")
+                .selectAll("tr")
+                .data(parsedCSV)
+                .enter()
+                .append("tr")
+                .selectAll("td")
+                .data(function (d) { return d; }).enter()
+                .append("td")
+                .html(function (d, i) {
+                    if ( i == 4 && d != 'GitHub 帳號' ) {
+                        return '<a href="https://' + d + '.github.io/vis2023f/" target="_blank"><img src="https://' + d + '.github.io/vis2023f/hw00/me.jpg"></a>' + '<hr><a href="https://github.com/' + d + '/vis2023f/" target="_blank">' + d + '</a>';
+                    }
+                    else if ( i == 0 || isNaN(d)) {
+                        return d;
+                    }
+                    else if ( i == 2 ) {
+                        return d;
+                    }
+                })
+                .filter(function (d, i) { return (i >= 3 && !isNaN(d) && d != ""); })
+                .attr("class", function (d, i) { 
+                    if (d == 10) return "excellent-kid"; 
+                    else if (d >= 7 ) return "good-kid"; 
+                    else if (d >= 2 ) return "fair-kid"; 
+                    else return "poor-kid";})
+                .append("img")
+                .attr("src", function (d, i) {
+                    if (10 >= d >= 0) return scoreImg[d];
+                    else return "./svg10/00.svg"
+                })
+                .attr("width", 50)
+                .attr("height", 50);
+        });
     </script>
 </body>
-
 </html>
