@@ -178,14 +178,53 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">03</span>/src/ 檔案夾。
+      Simple baseline 程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">03</span>/src/simple 檔案夾。
+      <br>
+    
+    <hr>
+      Medium baseline 程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">03</span>/src/medium 檔案夾。
+      <br>
+      
+    <hr>
+      Strong baseline 程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">03</span>/src/strong 檔案夾。
+      <br>
+      </div>
+  </div>
+  <!-- ------------------------------------------------>
+  
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <h4>前往你的 Demo 網頁</h4>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      <a href="https://catossun.github.io/vis2023f/hw03/src/simple/planar_graph.html">https://catossun.github.io/vis2023f/hw03/src/simple/</a>
+      <hr>
+      <a href="https://catossun.github.io/vis2023f/hw03/src/medium/choropleth.html">https://catossun.github.io/vis2023f/hw03/src/medium/</a>   
+      <hr>
+      <a href="https://catossun.github.io/vis2023f/hw03/src/strong/">https://catossun.github.io/vis2023f/hw03/src/strong/</a>
+      </div>
+  </div>
+
+  
+  <!-- ------------------------------------------------>
+
+  <!-- ------------------------------------------------>
+  
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <h4>心得報告 105 字</h4>
+      透過這次的作業，我學會如何將之前去美術館的行走軌跡，透過 d3 將其與美術館的平面圖結合，讓我可以用視覺化的方式來清楚地看出我走過哪些地方。不過由於我沒有每層都定位的關係，導致定位點常常跑出去平面圖外面，甚至會有穿牆的情況發生，不過還是蠻有趣的一次作業。
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      
     </div>
   </div>
 
@@ -200,21 +239,30 @@
           <th>分項描述</th>
         </tr>
         <tr>
-          <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
-          <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td rowspan="0" id="myTotal"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
+          <td id='m1'>1</td>
+          <td>Simple baseline-1 - 播放自己的參訪路徑</td>
         </tr>
-        <tr>
+
+         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td id='m2'>2</td>
+          <td>Simple baseline-2 - 計算自己的移動距離/卡路里</td>
         </tr>
+        
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
+          <td id='m3'>3</td>
+          <td>Medium baseline - 美術館樓層平面圖行走軌跡</td>
         </tr>
+        
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td id='m4'>4</td>
+          <td>Strong baseline - 建立課程班上學生居住縣市人數的 Choropleth</td>
+        </tr>
+
       </table>
     </div>
   </div>
@@ -222,11 +270,45 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+       <h4>Simple baseline - 播放自己的參訪路徑，並計算自己的移動距離/卡路里</h4>
     </div>
   </div>
+  
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+       <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
+  src="./src/simple/planar_graph.html"></iframe>  
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+ 
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+       <h4>Medium baseline - 美術館樓層平面圖行走軌跡</h4>
+    </div>
+  </div>
+  
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
+  src="./src/medium/choropleth.html"></iframe>
+    </div>
+  </div>
+  
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+       <h4>Strong baseline - 建立課程班上學生居住縣市人數的 Choropleth</h4>
+    </div>
+  </div>
+  
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
+        src="https://observablehq.com/embed/44a37fa1e3ab3205@29?cells=chart"></iframe>
+    </div>
+  </div>  
 
   <!-- ------------------------------------------------>
 
@@ -245,9 +327,6 @@
   d3.select("#myCheckbox2").on("change",update);
   d3.select("#myCheckbox3").on("change",update);
   d3.select("#myCheckbox4").on("change",update);
-  d3.select("#myCheckbox5").on("change",update);
-  d3.select("#myCheckbox6").on("change",update);
-  d3.select("#myCheckbox7").on("change",update);
 
   update();
   
@@ -265,6 +344,10 @@
 
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
+    }
+
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());
     }
 
     d3.select("#myTotal").html(score);    

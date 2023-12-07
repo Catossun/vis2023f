@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>HW3 Simple baseline</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+    <div id="icon"></div>
+    <div class="grid">
+        <div id="floor1" class="grid-item">
+            <p>師大美術館一樓展廳</p>
+            <img src="../svg/no1F.svg" alt="1F" />
+            <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="show-image"> Show Image
+                </label>
+            </div>
+        </div>
+        <div id="floor2" class="grid-item">
+            <p>師大美術館二樓展廳</p>
+            <img src="../svg/no2F.svg" alt="2F" />
+            <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="show-image"> Show Image
+                </label>
+            </div>
+        </div>
+        <div id="floor3" class="grid-item">
+            <p>師大美術館三樓展廳</p>
+            <img src="../svg/no3F.svg" alt="3F" />
+            <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="show-image"> Show Image
+                </label>
+            </div>
+        </div>
+        <div id="floor4" class="grid-item">
+            <p>師大美術館四樓展廳</p>
+            <img src="../svg/no4F.svg" alt="4F" />
+            <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="show-image"> Show Image
+                </label>
+        </div>
+        </div>
+      </div>
+
+      <div id="info-container">
+        <div id="distance-info"></div>
+        <div id="time-info"></div>
+        <label>Speed: </label>
+        <input id="rangeBar" style="display:inline" type="range" min="100" max="2000" step="100" value="500" oninput="rangeInput()">
+        <label id="rangeBarValue">500</label>
+        <div id="calories-info"></div>
+      </div>
+      
+      <script src="../js/path.js"></script>
+      <script src="../js/script.js"></script>
+      <script src="../js/calorie.js"></script>
+      <script>
+        window.onload = () => {
+            rangeInput();
+            // 初始加載 icon 位置
+            loadjson();
+            // 每秒更新一次位置
+            setTimeout(updatePage, 500);
+        }
+        
+        function rangeInput() {
+            let x = document.getElementById("rangeBar").value;
+            document.getElementById("rangeBarValue").innerHTML = x + " ms";
+        }
+      </script>
+</body>
+</html>
